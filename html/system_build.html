@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>字體編輯</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.lp.css">
+	<link rel="stylesheet" type="text/css" href="../css/landing-page.css">
+    <link href='http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    h1 {
+        font-family: 'cwTeXFangSong';
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="http://www.cc.ntut.edu.tw/~tjhsieh/">國立臺北科技大學資訊工程系計算機圖學實驗室</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="../index.html">首頁</a>
+                    </li>
+					<li>
+                        <a href="system_build.html">系統建置</a>
+                    </li>
+					
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="top"></a>
+    <div class="intro-header">
+        <div class="container" style="height:350px;">
+
+            <div class="row">
+                <div class="col-lg-12" style="height:300px;">
+                    <div class="intro-message" style="position: relative;padding-top: 0%;padding-bottom: 70%;">
+                        <h1 stroke="#000000" stroke-width="2px">毫米波雷達之座標系統轉換<br>室內定位系統</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Content -->
+   <!--  <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <br><br><br>
+                    <img class="img-responsive" src="img/animation.svg" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+	
+	<div class="content-section-a">
+        <div class="container">
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+
+            <div class="row">
+				<h2 class="section-heading">環境架設</h2>
+				<p style="font-size: 18px">
+					左圖是環境架設的平面圖，右圖則是3D的架設示意圖。
+					<br><br><br>
+				</p>
+                <div class="col-lg-4 col-sm-6">
+                    <img class="img-responsive" src="../img/環境架設_平面圖.png"  alt="">
+					<p align="Center" style="font-size: 16px">平面圖</p>
+                </div>
+                <div class="col-lg-8 col-sm-6">
+                    <img class="img-responsive" src="../img/環境架設_3D示意圖.png"  alt="">
+					<p align="Center" style="font-size: 16px">3D示意圖</p>
+                </div>
+				
+				<div class="col-lg-12 col-sm-6">
+					<p style="font-size: 18px">
+						<br><br><br>
+						下圖為Sony魚眼鏡頭和毫米波雷達在實驗室架設的位置。
+					</p>
+				</div>
+				<div class="col-lg-10 col-sm-6">
+						<img class="img-responsive" src="../img/實際架設.png"  alt="">
+						<p align="Center" style="font-size: 16px">實際架設狀況</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+	
+	<div class="content-section-a">
+        <div class="container">
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+
+            <div class="row">
+                <div class="col-lg-10 col-sm-6">
+
+					<h2 class="section-heading">系統架構</h2>
+					<p style="font-size: 18px">
+						以下是系統的整體架構圖，<br>
+						系統分成設備資料初始化和系統與環境的調配，<br>
+						其中初始化能使系統了解魚眼設備和雷達的相對關係的，<br>
+						而系統調配則是微調參數讓系統來配合環境。<br><br>
+						
+						系統經由資料取得、資料匹配、曲線凝合和座標轉換的步驟，<br>
+						使雷達的訊號映射到魚眼的畫面上。
+						<br><br><br>
+					</p>
+					
+                    <img class="img-responsive" src="../img/system_arch.png"  alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+	
+	<div class="content-section-a">
+        <div class="container">
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+
+            <div class="row">
+				<h2 class="section-heading">資料取得</h2>
+				<p style="font-size: 18px">
+					我們需要給系統幾個初始的數據參考點，<br>
+					因此必須在參考點中拍攝魚眼影像和擷取雷達數據。<br>
+					<br>
+					以下是魚眼拍攝的參考點畫面，其中虛擬中心是指<br>
+					建構者在魚眼設備正下方的位置。<br>
+					系統至少需要三個定位參考點，我們建議第一個<br>
+					參考點距離盡量接近魚眼，且建構者的臉部特徵<br>
+					必須明顯地被魚眼拍攝。<br>
+					第三個參考點站在欲定位範圍的最遠處，第二個<br>
+					參考點則建議站在第一個和第三個參考點的中間<br>
+					較為適合。
+				</p>
+				
+                <div class="col-lg-5 col-sm-5">
+					<img class="img-responsive" src="../img/fisheye_catch00.jpg"  alt="">
+					<p align="Center" style="font-size: 16px">雷達測量: (-59, 513)</p>
+					<p align="Center" style="font-size: 16px"> &nbsp </p>
+					<p align="Center" style="font-size: 16px">虛擬中心</p>
+					
+					<img class="img-responsive" src="../img/fisheye_catch1.jpg"  alt="">
+					<p align="Center" style="font-size: 16px">雷達測量: (-115, 147)</p>
+					<p align="Center" style="font-size: 16px">距離虛擬中心: 88公分</p>
+					<p align="Center" style="font-size: 16px">定位點2</p>
+                </div>
+				<div class="col-lg-5 col-sm-5">
+					<img class="img-responsive" src="../img/fisheye_catch5.jpg"  alt="">
+					<p align="Center" style="font-size: 16px">雷達測量: (-182, 644)</p>
+					<p align="Center" style="font-size: 16px">距離虛擬中心: 179公分</p>
+					<p align="Center" style="font-size: 16px">定位點1</p>
+					
+					<img class="img-responsive" src="../img/fisheye_catch7.jpg"  alt="">
+					<p align="Center" style="font-size: 16px">雷達測量: (-219, 707)</p>
+					<p align="Center" style="font-size: 16px">距離虛擬中心: 251公分</p>
+					<p align="Center" style="font-size: 16px">定位點3</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+	<div class="content-section-a">
+        <div class="container">
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+
+            <div class="row">
+				<h2 class="section-heading">資料匹配</h2>
+				<h3 class="section-heading">YOLO模型辨識</h3>
+				<p style="font-size: 18px">
+					使用YOLO當作影像辨識的模型，且在910個資料中，<br>
+					其中690個為訓練集資料，另外的220個為測試集資料，<br>
+					訓練集比例約為75%，訓練次數達100萬次。<br>
+					<br>
+				</p>
+				<div class="col-lg-8 col-sm-5">
+					<img class="img-responsive" src="../img/YOLO訓練集.png"  alt="">
+					<p align="Center" style="font-size: 16px">YOLO訓練集</p>
+                </div>
+				
+				<div class="col-lg-12 col-sm-5">
+				<p style="font-size: 18px">
+					<br>
+					辨識效果如下圖，對20張圖片，50個辨識對象，測試辨識率達85%。<br>
+				</div>
+				<div class="col-lg-8 col-sm-5">
+					<img class="img-responsive" src="../img/辨識效果.jpg"  alt="">
+					<p align="Center" style="font-size: 16px">辨識效果圖</p>
+                </div>
+				
+				<div class="col-lg-12 col-sm-5">
+					<br><br>
+					<h3 class="section-heading">資訊篩選與匹配</h3>
+					<p style="font-size: 18px">
+						當建構者在參考點透過魚眼拍攝到的圖像，<br>
+						沒有辦法被YOLO辨識或辨識錯誤的目標時，<br>
+						建構者必須調整圖像辨識和雷達偵測的資料。<br>
+						<br>
+					</p>
+					<div class="col-lg-8 col-sm-5">
+						<img class="img-responsive" src="../img/資料匹配失敗.png"  alt="">
+						<p align="Center" style="font-size: 16px">資料匹配失敗</p>
+						<br><br>
+					</div>
+					<div class="col-lg-8 col-sm-5">
+						<img class="img-responsive" src="../img/資料匹配成功.png"  alt="">
+						<p align="Center" style="font-size: 16px">資料匹配成功</p>
+					</div>
+				</div>
+				
+				<div class="col-lg-12 col-sm-5">
+					<br><br>
+					<h3 class="section-heading">曲線凝合</h3>
+					<p style="font-size: 18px">
+						得到幾個可靠的定位參考點後，<br>
+						而我們藉由曲線凝合的方式來使少量的參考點化成方程式，找參考點之外的雷達與圖像的關係。<br>
+						<br>
+						x軸為雷達測量使用者和魚眼設備的距離，y軸為魚眼圖像上人的位置到圖像中心的像素差。<br>
+						因建構者與魚眼設備越遠，則建構者在圖像上就會離圖像中心越遠。<br>
+						以下兩圖比較只使用內插法和曲線凝合的差異。<br>
+						<br>
+					</p>
+					<div class="col-lg-8 col-sm-5">
+						<img class="img-responsive" src="../img/系統結果/比較內插法和曲線凝合的差異.png"  alt="">
+						<p align="Center" style="font-size: 16px">比較內插法和曲線凝合的差異</p>
+						<br><br>
+					</div>
+				</div>
+				
+				<div class="col-lg-12 col-sm-5">
+					<br><br>
+					<h3 class="section-heading">座標轉換</h3>
+					<p style="font-size: 18px">
+						經由上列步驟的處理，
+						我們得到定位參考點的雷達和圖像資訊，<br>
+						且進一步知道兩設備在整個空間互相關係的曲線，<br>
+						再把這個曲線帶入我們的演算法，就可以得到定位者在圖像上的相對位置。<br>
+						步驟一，利用雷達測量每次定位者和虛擬原點的距離。<br>
+						步驟二，將此距離帶入雷達和圖像的關係曲線，可得到相對應圖像上的距離。<br>
+						步驟三，魚眼設備的座標和雷達量測座標會有一些角度上的偏差，而我們透過程式來將整個座標系統矯正回來。<br>
+						最後步驟四，必須確認矯正角度過後的座標系統跟魚眼圖像的座標是不是一致的。<br>
+						<br>
+					</p>
+					<div class="col-lg-10 col-sm-5">
+						<img class="img-responsive" src="../img/座標轉換.png"  alt="">
+						<p align="Center" style="font-size: 16px">圖像座標轉換過程</p>
+						<br><br>
+					</div>
+				</div>
+				
+				<div class="col-lg-12 col-sm-5">
+					<br><br>
+					<h3 class="section-heading">系統定位效果</h3>
+					<p style="font-size: 18px">
+						因為系統初始化的資料關係，<br>
+						其實際有效定位空間為 2.4米半徑、2.4米高的圓柱空間。<br>
+						以下為單一目標分別在5個位置的系統定位狀況。<br>
+						其中亮綠色為測試人員以頭為目標，所標記的定位位置，紅色為系統定位的標記。<br>
+						<br>
+					</p>
+					<div class="col-lg-5 col-sm-5">
+						<img class="img-responsive" src="../img/系統結果/圖4.2.png"  alt="">
+						<p align="Center" style="font-size: 16px">單人系統定位效果圖(1)</p>
+						<p align="Center" style="font-size: 16px"> &nbsp </p>
+						
+						<img class="img-responsive" src="../img/系統結果/圖4.4.png"  alt="">
+						<p align="Center" style="font-size: 16px">單人系統定位效果圖(3)</p>
+						<p align="Center" style="font-size: 16px"> &nbsp </p>
+					</div>
+					<div class="col-lg-5 col-sm-5">
+						<img class="img-responsive" src="../img/系統結果/圖4.3.png"  alt="">
+						<p align="Center" style="font-size: 16px">單人系統定位效果圖(2)</p>
+						<p align="Center" style="font-size: 16px"> &nbsp </p>
+						
+						<img class="img-responsive" src="../img/系統結果/圖4.5.png"  alt="">
+						<p align="Center" style="font-size: 16px">單人系統定位效果圖(4)</p>
+						<p align="Center" style="font-size: 16px"> &nbsp </p>
+					</div>
+					<div class="col-lg-5 col-sm-5">
+						<img class="img-responsive" src="../img/系統結果/圖4.6.png"  alt="">
+						<p align="Center" style="font-size: 16px">單人系統定位效果圖(5)</p>
+						<p align="Center" style="font-size: 16px"> &nbsp </p>
+					</div>
+				</div>
+				
+				<div class="col-lg-12 col-sm-5">
+					<br><br>
+					<h3 class="section-heading">系統定位效果 - 分析</h3>
+					<p style="font-size: 18px">
+						在定位有效定位範圍的移動，轉換座標的誤差會比較小。<br>
+						左圖為有效定位範圍的標記，右圖為超過有效定位範圍一公尺處，<br>
+						也就是距離虛擬中心3.4公尺處的定位標記，<br>
+						超越有效範圍後的定位效果就不比前者的定位效果來得好。<br>
+						<br>
+						記錄以上5個位置的紅點和綠點的座標。<br>
+						比較人工標定和系統的定位標記的效果，計算相差像素的平均為35.8個像素。<br>
+						<br>
+					</p>
+					<div class="col-lg-4 col-sm-5">
+						<img class="img-responsive" src="../img/系統結果/圖4.7.png"  alt="">
+						<p align="Center" style="font-size: 16px">比較不同有效範圍的標記</p>
+					</div>
+					<div class="col-lg-7">
+						
+						<img class="img-responsive" src="../img/系統結果/表4.8.png"  alt="">
+						<p align="Center" style="font-size: 16px">人工與系統標記的座標記錄表</p>
+					</div>
+					
+					<div class="col-lg-7 col-sm-5">
+					<p style="font-size: 18px">
+						<br><br>
+						以下圖中，是多目標在定位空間被系統定位的狀況，<br>
+						只要目標之間互相不要太靠近，當兩者之間的距離小40公分時，<br>
+						雷達就容易將兩個目標判斷為同一個目標。<br>
+					</p>
+					</div>
+					<div class="col-lg-7 col-sm-5">
+						<img class="img-responsive" src="../img/系統結果/圖4.9.png"  alt="">
+						<p align="Center" style="font-size: 16px">多人系統定位效果圖(1)</p>
+						<br><br>
+					</div>
+					<div class="col-lg-7 col-sm-5">
+						<img class="img-responsive" src="../img/系統結果/圖4.10.png"  alt="">
+						<p align="Center" style="font-size: 16px">多人系統定位效果圖(2)</p>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <hr class="section-heading-spacer">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright text-muted small"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"></span><br>
+			互動式向量圖形編輯，由<a xmlns:cc="http://creativecommons.org/ns#" href="http://www.cc.ntut.edu.tw/~tjhsieh/" property="cc:attributionName" rel="cc:attributionURL">國立臺北科技大學資訊工程系計算機圖學實驗室</a>製作，
+			以<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款</a>釋出。
+			姓名標示-非商業性-相同方式分享 CC BY-NC-SA
+			本授權條款允許使用者對本著作進行重混、調整，以及依原著作建立新著作，但僅限於非商業目的之使用。唯使用者就其新創著作，必須按照表彰
+			原作：國立臺北科技大學資訊工程系計算機圖學實驗室，並且將產出之新創著作採用相同的授權條款釋出。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="lib/jquery-2.1.3.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+</html>

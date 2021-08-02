@@ -1,0 +1,174 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>卷積神經網路擴增實境遮蔽感知系統</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.lp.css">
+	<link rel="stylesheet" type="text/css" href="css/landing-page.css">
+    <link href='http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    h1 {
+        font-family: 'cwTeXFangSong';
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="http://www.cc.ntut.edu.tw/~tjhsieh/">國立臺北科技大學資訊工程系計算機圖學實驗室</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">首頁</a>
+                    </li>
+					<!-- <li>
+                        <a href="html/system_build.html">系統建置</a>
+                    </li> -->
+					
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="top"></a>
+    <div class="intro-header">
+        <div class="container" style="height:500px;">
+            <div class="row">
+                <div class="col-lg-12" style="height:500px;">
+                    <div class="intro-message" style="position: relative;padding-top: 0%;padding-bottom: 70%;">
+                        <h1 stroke="#000000" stroke-width="2px">卷積神經網路擴增實境遮蔽感知系統</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Content -->
+   <!--  <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <br><br><br>
+                    <img class="img-responsive" src="img/animation.svg" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+	<a  name="demo_original"></a>
+	<div class="content-section-a">
+    <!--<p style="text-align: right">本圖構成素材圖檔參考自<u>李誡</u> 《李明仲營造法式》，並經由系統生成</p> -->
+        <div class="container">
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+
+					<h2 class="section-heading">摘要</h2>
+                    <p style="font-size: 18px">
+                        擴增實境中最大的難題，就是深度感知遮擋，虛擬物件與現實場景物體相互交錯並
+不是一件簡單的事，虛擬物件不像人類有對物理世界的理解，只是單純的被疊加於場景
+之上，無法被遮擋，使得場景變的不真實。現有的擴增實境技術，雖已能做到使虛擬物
+體被現實世界物體遮蔽，但在移動的畫面中，還是無法快速且精準得知所有物體的每個
+深度值情況下，仍有閃爍或不準確的情況發生。本論文所提的系統使用稀疏的 SLAM 重
+構點雲資訊作為輸入，取代原有技術中計算光流的方法，採用深度學習中訓練好的光流
+估計模型。用在估算定位準確的遮蔽邊緣，將稀疏深度點雲傳播至估算好的遮蔽邊緣圖
+中，產生深度圖。將深度圖進一步用在擴增實境中，無法達到即時生成，但能有效解決
+遮擋問題。本論文所提的系統使用深度學習計算光流的方法，雖然在時間上比原有技術
+費時，但精度上比原有技術更加精確。
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 m-0">
+                    <img class="img-responsive m-0" src="img/result.png"  alt="" width="100%">
+
+                </div>
+                <div class="col-lg-3 col-sm-6 m-0">
+                    <img class="img-responsive m-0" src="img/000051.png"  alt="" width="100%">
+                </div>
+            </div>
+            <div>
+                <hr class="section-heading-spacer">                    
+                <h2 class="section-heading">AR Effect</h2>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <ol type="1">
+                            <li>使用手機or平板拍攝影片</li>
+                            <li>將影片輸入深度圖系統</li>
+                            <li>將影片放入After Effect，計算鏡頭移動軌跡</li>
+                            <li>將相機移動軌跡輸入MAYA場景中</li>
+                            <li>在MAYA中製作虛擬物件，並輸出虛擬物件RGB及深度圖</li>
+                            <li>使用OpenCV結合真實場景與虛擬物件，製作擴增實境遮蔽感知效果</li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <img class="img-responsive m-0" src="img/ar_effect.png"  alt="" width="100%">
+                    </div>
+                </div>       
+            </div>
+            <div>
+                <hr class="section-heading-spacer">                    
+                <h2 class="section-heading">系統呈現</h2>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="video/demo.mp4" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+<!--    
+    <a name="background"></a>
+	<div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <hr class="section-heading-spacer">
+                <div class="col-lg-5 col-sm-6">
+                    <h2 class="section-heading">《營造法式》五彩遍裝</h2>
+					<a href="color_content/index.html"><p class="lead">營造法式原文</p></a>
+                    <p>營造法式原文來自<a href="https://zh.wikisource.org/zh-hant/營造法式">維基文庫</a></p>
+                </div>
+                <div class="col-lg-6 col-lg-offset-1 col-sm-6">
+                    <img class="img-responsive" src="img/colorful.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+
+
+    <footer>
+        <div class="container">
+            <hr class="section-heading-spacer">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright text-muted small"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"></span><br>
+			卷積神經網路擴增實境遮蔽感知系統，由<a xmlns:cc="http://creativecommons.org/ns#" href="http://www.cc.ntut.edu.tw/~tjhsieh/" property="cc:attributionName" rel="cc:attributionURL">國立臺北科技大學資訊工程系計算機圖學實驗室</a>製作，
+			以<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款</a>釋出。
+			姓名標示-非商業性-相同方式分享 CC BY-NC-SA
+			本授權條款允許使用者對本著作進行重混、調整，以及依原著作建立新著作，但僅限於非商業目的之使用。唯使用者就其新創著作，必須按照表彰
+			原作：國立臺北科技大學資訊工程系計算機圖學實驗室，並且將產出之新創著作採用相同的授權條款釋出。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="lib/jquery-2.1.3.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+</html>
